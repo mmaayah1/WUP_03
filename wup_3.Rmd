@@ -73,4 +73,8 @@ In the 95 percent confidence level statistical graph above, we can determine tha
 
 ## Conclusions
 
+The question????......is there a difference between the average alcohol consumed and the role we chose to sit in??  
+
+From the box plot, numerical summaries, inferential, and anova test shown above we conclude that yes there is a difference between the average alcohol consumed and the row people chose to sit in.
+
 

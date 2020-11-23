@@ -1,6 +1,6 @@
 ---
 title: "Alcohol vs Seat choice"
-author: "Your Name"
+author: "Maryana Maayah"
 date: "Fall 2020"
 output: html_document
 ---
@@ -12,10 +12,17 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r include=FALSE}
 require(tidyverse)
 require(tigerstats)
+require(knitr)
 davisdata <- read.csv(file="UCDavis.csv")
 ```
+
+
 ## Our Goal is to answer this question Is there a difference between the alcohol consumed between the row
 ## you choose to sit in??
+
+$H_0$: The Null Hypothesis is that there is no difference between the row you choose to sit in
+
+$H_A$: The Alternative Hypothesis is that there is a difference between the row you choose to sit in
 
 ## Now with ggplot - first select the basic data
 

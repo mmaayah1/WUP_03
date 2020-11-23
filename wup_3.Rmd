@@ -35,19 +35,24 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
-    
+  according to the boxplot up there it appears that the mean consumption that the mean of alcohol that has been consumed was significantly higher for those who chose to sit in the back seat at 9.6% than those who sat in the front at a mean 1.8% of, and 3.2% who sat in the middle. 
+  
   
 ### get fancy  
 
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
-
+ 
+ The notch from that showing up at the top shows that the average for the back row seats is below the 95% confidence range, and if the notches between two boxes do not match, this gives evidence of a statistically meaningful gap between the medians. This will validate the null hypothesis that no differences occur.
+ 
 ## Numerical Summarys 
 
 ```{r}
 favstats(alcohol~Seat,data=davisdata)
 ```
+
+The statistical chart of the Cross Tabulation tells us that the "mean" alcohol intake consumed by persons who choose the back row is considerably higher at 9.6 percent compared to 1.8 percent consumption in the front row and 3.28 percent in the middle row.
 
 ## Inferential Tests
 
@@ -56,13 +61,15 @@ model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
 
+The anova test tells out that it needs a p-value of 0.000116, which is less than 0.05. This graph shows us whether the Null statement can be dismissed, so it is not probable that there will be no improvement depending on the preference of the person sitting in the row and alcohol intake.
+
 
 ```{r}
 par(mar = c(3, 8.7, 2, 2))
 plot(TukeyHSD(model1),las=2)
 ```
-```
 
+In the 95 percent confidence level statistical graph above, we can determine that there is no difference since the 0 is the front-back row. The middle-back row indicates a disparity, and the front-back row shows the greatest difference, suggesting that those seated in the back row drank a considerable amount of alcohol from the front to the back row than those preferring the front or middle seats.
 
 ## Conclusions
 
